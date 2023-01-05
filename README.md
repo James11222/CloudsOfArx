@@ -1,4 +1,7 @@
-# CloudsOfArx
+# CloudsOfArx 
+[![codecov](https://codecov.io/gh/James11222/CloudsOfArx/branch/main/graph/badge.svg?token=LBJRT9BTNA)](https://codecov.io/gh/James11222/CloudsOfArx)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/James11222/CloudsOfArx/run_tests.yml)
+![PyPI](https://img.shields.io/pypi/v/CloudsOfArx)
 
 An automated webscraper package to make wordcloud images out of the abstracts of your first-author papers. 
 
