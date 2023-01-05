@@ -4,18 +4,14 @@ import CloudsOfArx.main as CloudsOfArx
 import os
 
 def test_tprint():
-    if CloudsOfArx.test_print() == True:
-        assert True
-    else:
-        assert False
+    flag = CloudsOfArx.test_print() == True
+    assert flag
 
 def test_clipping_mask():
     test_dir_path = os.path.realpath(__file__)[:-13]
     image_file = test_dir_path + 'BlackHole_Example.png'
     mask, image = create_image.create_image_mask(image_file)
+    flag = mask.shape == image.shape
 
-    if mask.shape == image.shape:
-        assert True
-    else:
-        assert False
+    assert flag
 
