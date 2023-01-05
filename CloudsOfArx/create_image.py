@@ -6,7 +6,7 @@ from scipy.ndimage import gaussian_gradient_magnitude
 from wordcloud import WordCloud, ImageColorGenerator
 
 
-def create_image_mask(image_file):
+def create_image_mask(image_file=None):
     """
     A function which takes in an image and formats a mask to be used by the wordcloud.
 
@@ -15,19 +15,27 @@ def create_image_mask(image_file):
     returns: mask, original_image
 
     """
-    # choose image we wish to use
-    image = np.array(Image.open(path.join(image_file)))
-    image = image[:,:,:3]
-    
-    # create mask white is "masked out" using edge detection
-    mask = image
-    mask[mask.sum(axis=2) == 0] = 255
-    edges = np.mean([gaussian_gradient_magnitude(image[:, :, i] / 255., 2) for i in range(3)], axis=0)
-    mask[edges > .08] = 255
+    if image_file is not None:
+        # choose image we wish to use
+        image = np.array(Image.open(path.join(image_file)))
+        image = image[:,:,:3]
+        
+        # create mask white is "masked out" using edge detection
+        mask = image
+        mask[mask.sum(axis=2) == 0] = 255
+        edges = np.mean([gaussian_gradient_magnitude(image[:, :, i] / 255., 2) for i in range(3)], axis=0)
+        mask[edges > .08] = 255
 
-    return mask, image
+        return mask, image
+    else:
+        # Just use a bland template
+        image = np.ones((1200, 1600, 3), dtype=int) * 255
+        mask = np.zeros((1200, 1600, 3), dtype=int) 
 
-def create_wordcloud(text_data, image_file, save_name=None):
+        return mask, image
+
+
+def create_wordcloud(text_data, image_file, save_name=None, test_case=False):
     """
     A function which generates a wordcloud from a mask and text data.
 
@@ -56,9 +64,13 @@ def create_wordcloud(text_data, image_file, save_name=None):
     plt.xticks([])
     plt.yticks([])
 
-    if save_name is not None:
-        wc.to_file(save_name + '.png')
-    else:
-        wc.to_file("wordcloud.png")
+    if test_case is False:
+        if save_name is not None:
+            wc.to_file(save_name + '.png')
+        else:
+            wc.to_file("wordcloud.png")
+    else: 
+        return True
+
 
 
