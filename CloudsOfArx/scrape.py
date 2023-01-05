@@ -71,7 +71,6 @@ def get_papers(ADS_TOKEN, author, orcid=None):
                     "citation_count",
                     "bibcode"], max_pages=100))
         
-
     dicts = []
     for paper in papers:
         aid = [
