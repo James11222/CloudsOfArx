@@ -14,7 +14,7 @@ def test_tprint():
 
 def test_clipping_mask():
     try:
-        image_dir = os.getcwd() + "/../../examples/BlackHole_Example.png"
+        image_dir = os.getcwd() + "/../examples/BlackHole_Example.png"
         mask, image = create_image.create_image_mask(image_dir)
         if mask.shape == image.shape:
             assert True
