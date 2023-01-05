@@ -35,7 +35,7 @@ def create_image_mask(image_file=None):
         return mask, image
 
 
-def create_wordcloud(text_data, image_file, save_name=None, test_case=False):
+def create_wordcloud(text_data, image_file, test_case, save_name=None,):
     """
     A function which generates a wordcloud from a mask and text data.
 

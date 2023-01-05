@@ -1,7 +1,7 @@
 import CloudsOfArx.scrape as scrape
 import CloudsOfArx.create_image as create_image
 
-def create_wordcloud(ADS_TOKEN, author, image_file=None, orcid=None, save_name=None):
+def create_wordcloud(ADS_TOKEN, author, image_file=None, orcid=None, save_name=None, test_case=False):
     """
     A function to create a wordcloud image out of the abstracts of an author's first-authored papers.
 
@@ -18,7 +18,7 @@ def create_wordcloud(ADS_TOKEN, author, image_file=None, orcid=None, save_name=N
     abstract_string = scrape.compile_abstracts(first_author_papers)
 
     #generate the wordcloud image
-    create_image.create_wordcloud(abstract_string, image_file, save_name)
+    create_image.create_wordcloud(abstract_string, image_file, test_case, save_name)
 
     print("Your wordcloud creation was succesful!")
     return True
