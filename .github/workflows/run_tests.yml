@@ -26,6 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest and codecov
+      env: 
+          ADS_KEY: ${{ secrets.ADS_API_TOKEN_TEST }}
       run: |
         pip install coverage
         coverage run -m pytest -v $(ls CloudsOfArx/tests/*_tests.py)
