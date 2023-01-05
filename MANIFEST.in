@@ -1,0 +1,5 @@
+include *.py
+include *.txt
+include *.md
+include CloudsOfArx/*.py
+include MANIFEST.in

@@ -1,0 +1,10 @@
+ads
+beautifulsoup4
+matplotlib
+numpy
+Pillow
+requests
+scipy
+setuptools
+wordcloud
+pytest

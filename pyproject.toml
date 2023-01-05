@@ -1,0 +1,15 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "numpy",
+    "ads",
+    "beautifulsoup4",
+    "matplotlib",
+    "Pillow",
+    "requests",
+    "scipy",
+    "setuptools",
+    "wordcloud"
+]
+build-backend = "setuptools.build_meta"

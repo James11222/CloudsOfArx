@@ -1,0 +1,1 @@
+from CloudsOfArx.main import create_wordcloud
