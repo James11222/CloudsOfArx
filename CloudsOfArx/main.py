@@ -22,3 +22,8 @@ def create_wordcloud(ADS_TOKEN, author, image_file, orcid=None, save_name=None):
 
     print("Your wordcloud creation was succesful!")
 
+
+def test_print():
+    print("This package is working!")
+    return True
+
