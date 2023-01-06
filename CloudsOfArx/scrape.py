@@ -138,9 +138,9 @@ def compile_abstracts(first_author_papers):
         
         #parse the page and pull out only the abstract text (excluding inline latex)
         soup = BeautifulSoup(page.content, 'html.parser')
-        abstract = soup.p.string
+        abstract = str(soup.find("meta", property="og:description"))
         pattern = r'\$(.*?)\$'
-        formatted_abstract = re.sub(pattern, '', abstract[21:-20])
+        formatted_abstract = re.sub(pattern, '', abstract[15:-30])
         abstracts.append(formatted_abstract)
 
     #turn the list of abstracts into one long string

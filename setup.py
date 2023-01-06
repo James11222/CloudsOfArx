@@ -12,7 +12,7 @@ here = pathlib.Path(__file__).parent.resolve()
 
 setup(
     name='CloudsOfArx',  # Required
-    version='0.2.0',  # Required
+    version='0.4.0',  # Required
     description='Web Scraper package for generating wordclouds from research paper abstracts.',  # Optional
     long_description=(here / 'README.md').read_text(encoding='utf-8'),  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)

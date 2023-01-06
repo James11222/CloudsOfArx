@@ -58,9 +58,7 @@ def create_wordcloud(text_data, image_file, test_case, save_name=None,):
     image_colors = ImageColorGenerator(original_image)
     wc.recolor(color_func=image_colors)
     
-    plt.figure(figsize=(10, 10))
     plt.imshow(wc, interpolation="bilinear")
-    plt.ylim(1000,200)
     plt.xticks([])
     plt.yticks([])
 
